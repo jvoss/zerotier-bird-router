@@ -1,0 +1,34 @@
+name: Publish to Registry
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get release version
+        id: get_version
+        run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
+
+      - name: Publish to GitHub Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: jvoss/zerotier-bird-router
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          tags: "latest,${{ env.RELEASE_VERSION }}"
+
+      - name: Publish to Docker Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: jpvoss/zerotier-bird-router
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          tags: "latest,${{ env.RELEASE_VERSION }}"
