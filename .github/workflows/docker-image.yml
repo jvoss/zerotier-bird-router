@@ -13,5 +13,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Build Ansible latest Docker image
+      - name: Build latest Docker image
         run: docker build . --file Dockerfile
