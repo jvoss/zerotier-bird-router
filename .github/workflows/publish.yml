@@ -19,7 +19,7 @@ jobs:
       - name: Publish to GitHub Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: jvoss/zerotier-bird-router
+          name: jvoss/zerotier-bird-router/zerotier-bird-router
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
