@@ -2,8 +2,8 @@ version: '2.3'
 
 services:
   zerotier-route-server:
-    image: jvoss/zerotier-route-server
-    container_name: zerotier-route-server
+    image: jpvoss/zerotier-bird-router
+    container_name: zerotier-bird-router
     restart: unless-stopped
     volumes:
       - zerotier_conf:/var/lib/zerotier-one
