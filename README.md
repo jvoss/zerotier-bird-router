@@ -1,7 +1,7 @@
 ZeroTier BIRD Router in Docker
 ==============================
 
-![Docker image](https://github.com/jvoss/zerotier-route-server/workflows/Docker%20image/badge.svg)
+![Docker image](https://github.com/jvoss/zerotier-bird-router/actions/workflows/docker-image.yml/badge.svg)
 
 This docker container runs the [ZeroTier](https://www.zerotier.com/) client and 
 [BIRD 2.0](https://bird.network.cz/) routing daemon. This is useful for running 
