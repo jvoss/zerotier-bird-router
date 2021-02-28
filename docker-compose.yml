@@ -5,6 +5,10 @@ services:
     image: jpvoss/zerotier-bird-router
     container_name: zerotier-bird-router
     restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
     volumes:
       - zerotier_conf:/var/lib/zerotier-one
       - bird_conf:/opt/bird/etc
