@@ -1,12 +1,11 @@
-ZeroTier BIRD Route Server
-==========================
+ZeroTier BIRD Router in Docker
+==============================
 
 ![Docker image](https://github.com/jvoss/zerotier-route-server/workflows/Docker%20image/badge.svg)
 
 This docker container runs the [ZeroTier](https://www.zerotier.com/) client and 
-[BIRD 2.0](https://bird.network.cz/) routing daemon. The container is useful for
-running a BGP route server for a small ZeroTier based Internet Exchange (IX), 
-primarily for network labbing and learning purposes.
+[BIRD 2.0](https://bird.network.cz/) routing daemon. This is useful for running 
+a BGP router attached to ZeroTier network.
 
 The image is built on Alpine Linux to keep deployment size minimal.
 
@@ -20,23 +19,23 @@ the inspriation for the included ZeroTier client.
 
 1) Pull image from Docker Hub
 
-    `docker pull jpvoss/zerotier-route-server`
+    `docker pull jpvoss/zerotier-bird-router`
 
 ### Building an image
 
 1) Clone to local machine
 
-    `git clone https://github.com/jvoss/zerotier-route-server.git`
+    `git clone https://github.com/jvoss/zerotier-bird-router.git`
 
 2) Build the image
 
   * Option A: Included versions of ZeroTier and BIRD2
 
-    `docker build -t zerotier-route-server .`
+    `docker build -t zerotier-bird-router .`
 
   * Option B: Specific versions of ZeroTier and/or BIRD2
 
-    `docker build -t zerotier-route-server . --build-arg BIRD_VERSION=2.0.7 ZEROTIER_VERSION=1.6.4`
+    `docker build -t zerotier-bird-router . --build-arg BIRD_VERSION=2.0.7 ZEROTIER_VERSION=1.6.4`
 
 ### Docker Compose
 
