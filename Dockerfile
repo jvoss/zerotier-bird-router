@@ -2,13 +2,13 @@
 # Credit for Zerotier client: https://github.com/zyclonite/zerotier-docker
 
 ARG ALPINE_VERSION=latest
-ARG BIRD_VERSION=2.0.7
-ARG ZEROTIER_VERSION=1.6.4
+ARG BIRD_VERSION=2.14
+ARG ZEROTIER_VERSION=1.12.2
 
 FROM alpine:${ALPINE_VERSION} AS builder
 
 # Download and build ZeroTier
-RUN apk add --update alpine-sdk linux-headers \
+RUN apk add --update alpine-sdk cargo linux-headers openssl-dev \
     && git clone --quiet https://github.com/zerotier/ZeroTierOne.git /src/zt \
     && git -C /src/zt reset --quiet --hard ${ZEROTIER_VERSION} \
     && cd /src/zt \
