@@ -15,13 +15,13 @@ the inspriation for the included ZeroTier client.
 
 ## Installation
 
-### From Docker Hub
+### Option 1: From Github Container Registry
 
-1) Pull image from Docker Hub
+1) Pull image the image
 
-    `docker pull jpvoss/zerotier-bird-router`
+    `docker pull ghcr.io/jvoss/zerotier-bird-router/zerotier-bird-router`
 
-### Building an image
+### Option 2: Build an image
 
 1) Clone to local machine
 
