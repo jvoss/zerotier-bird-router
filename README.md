@@ -89,7 +89,7 @@ Docker >1.2.0:
 
 ```
   docker run --device=/dev/net/tun --cap-add=NET_ADMIN \
-         -v <peristed zerotier configuration volume>:/var/lib/zerotier-one \
-         -v <peristed BIRD configuration volume>:/opt/bird/etc \
+         -v <persisted zerotier configuration volume>:/var/lib/zerotier-one \
+         -v <persisted BIRD configuration volume>:/opt/bird/etc \
          jvoss/zerotier-route-server
 ```
