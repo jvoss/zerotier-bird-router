@@ -24,11 +24,3 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           tags: "latest,${{ env.RELEASE_VERSION }}"
-
-      - name: Publish to Docker Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          name: jpvoss/zerotier-bird-router
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          tags: "latest,${{ env.RELEASE_VERSION }}"
